@@ -32,7 +32,9 @@ public class Practice08SetTextSkewXView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        //大于0头往左斜
+        //小于0头往右斜
+        paint.setTextSkewX(-0.5f);
         canvas.drawText(text, 50, 100, paint);
     }
 }

@@ -28,8 +28,8 @@ public class Practice12MeasureTextView extends View {
     }
 
     {
-        paint1.setTextSize(60);
-        paint2.setTextSize(120);
+        paint1.setTextSize(30);
+        paint2.setTextSize(60);
         paint2.setColor(Color.parseColor("#E91E63"));
     }
 
@@ -40,7 +40,9 @@ public class Practice12MeasureTextView extends View {
         // 使用 Paint.measureText 测量出文字宽度，让文字可以相邻绘制
 
         canvas.drawText(text1, 50, 200, paint1);
-        canvas.drawText(text2, 50 + 100, 200, paint2);
-        canvas.drawText(text3, 50 + 200, 200, paint1);
+        float firstLength = paint1.measureText(text1);
+        canvas.drawText(text2, 50 + firstLength, 200, paint2);
+        float sencondLength = paint2.measureText(text2);
+        canvas.drawText(text3, 50 + firstLength + sencondLength, 200, paint1);
     }
 }
